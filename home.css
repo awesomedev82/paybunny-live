@@ -6,6 +6,10 @@
     font-style: normal;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Manrope;
 }
@@ -23,7 +27,7 @@ body {
 
 .HeroDivLeft {
     width: 50%;
-    margin-top: 90px;
+    margin-top: 110px;
 }
 
 .HeroDivLeft h1 {
@@ -37,7 +41,7 @@ body {
 }
 
 .HeroDivRight img {
-    max-width: 100%;
+    width: auto;
     max-height: 600px;
     margin-top: 40px;
     margin-left: 55px;
@@ -57,7 +61,7 @@ button {
 
 .JoinButtonDiv {
     position: absolute;
-    top: 510px;
+    top: 530px;
 }
 
 .header {
@@ -65,7 +69,7 @@ button {
     width: 640px;
     margin: 0 auto;
     font-weight: 800;
-    margin-top: 90px;
+    margin-top: 130px;
     text-align: center;
 }
 
@@ -99,7 +103,7 @@ button {
     margin-top: 30px;
     display: flex;
     align-items: center;
-    height: 400px;
+    height: 457px;
     justify-content: space-around;
     background-color: #E2E7FF;
     border-radius: 30px;
@@ -108,30 +112,34 @@ button {
     flex-wrap: wrap;
 }
 
+.waitlist-image-box {
+    height: 100%;
+    display: flex;
+}
+
 .waitlist img {
-    margin-top: 60px;
-    max-width: 100%;
-    max-height: 340px;
+    margin-top: auto;
     height: auto;
 }
 
 .waitlistLeft h1 {
     font-size: 48px;
-    font-size: 800;
+    font-weight: 800;
+    margin-bottom: 0;
 }
 
 .waitlistLeft p {
     font-size: 16px;
-    font-size: 600;
+    font-weight: 600;
+    margin:24px 0;
+    max-width: 370px;
+    line-height: 22px;
 }
 
 .footer {
     margin-top: 50px;
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    height: 400px;
-    justify-content: space-between;
+    margin-bottom: 42px;
+    padding: 31px 31px 62px;
     background-color: #15141F;
     border-radius: 30px;
     width: 94%;
@@ -141,30 +149,39 @@ button {
     text-align: center;
 }
 
+.footer .footer-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .footer p {
     font-size: 6px;
     text-align: center;
-    margin: 0 auto;
+    margin: 11px auto 0px;
     width: 100%;
     font-weight: 600;
 }
 
 .frame1 img, .frame2 img {
     max-width: 100%;
-    max-height: 360px;
     height: auto;
 }
 
-.middleFrame img {
-    max-height: 50px;
-    max-width: 150px;
-    height: auto;
-    width: auto;
+.middleFrame{
+    margin-top: auto;
+    margin-bottom: 36px;
 }
 
-.middleFrame {
+
+.middleFrame p {
     font-size: 12px;
     font-weight: 600;
+    margin-top: 18px;
+}
+
+.middleFrame > p:first-of-type {
+    margin-top: 40.5px;
 }
 
 .scroll-animate {
@@ -265,13 +282,16 @@ button {
         margin-top: 20px;
     }
 
+    .waitlist{
+        margin-top: 0;
+    }
+
     .waitlist, .footer {
         width: 95%;
         margin-left: auto;
         margin-right: auto;
         flex-direction: column;
         text-align: center;
-        height: 290px;
     }
 
     .waitlist button {
@@ -279,6 +299,8 @@ button {
     }
 
     .waitlist p {
+        max-width: 80%;
+        margin: 9px auto;
         font-size: 14px;
         width: auto;
     }
@@ -287,13 +309,21 @@ button {
         display: none;
     }
 
+    .waitlist-image-box{
+        display: none;
+    }
     .frame1 img, .frame2 img {
         display: none;
+    }
+
+    .waitlist {
+        height: 241px;
     }
 
     .waitlistLeft h1 {
         font-size: 32px;
         font-weight: 800;
+        margin-top: 0px;
     }
 
     .header {
@@ -308,9 +338,10 @@ button {
         gap: 16px;
         font-size: 14px;
         font-weight: 700;
-        margin-top: 20px;
     }
-
+    .JoinButtonDiv button {
+        margin-top: 16px;
+    }
     .header1 {
         font-size: 14px;
         font-weight: 800;
@@ -327,16 +358,25 @@ button {
         justify-content: center;
     }
 
-    .footer p {
-        font-size: 10px;
-        text-align: center;
-        margin: 0 auto;
-        width: 70%;
-        font-weight: 600;
-    }
-
     .footer {
         margin-top: 20px;
+        padding: 48px 66px 75px;
+    }
+    .footer p {
+        font-size: 6px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .footer .footer-box p{
+        font-size: 12px;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        margin-top: 18px;
+    }
+
+    .middleFrame > p:first-of-type {
+        margin-top: 40.5px;
     }
 
     .card1, .card2, .card3 {
