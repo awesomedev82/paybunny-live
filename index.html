@@ -1,408 +1,94 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="assets/css/global.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <script>
-      var startX = 0;
-      var endX = 400;
-      var startY = 260;
-      var endY = 0;
-      var startScale = 0.7;
-      var endScale = 0.25;
-      var startRotate = 0;
-      var endRotate = 0;
-      var maxScroll = 0;
-      console.log(window.innerWidth);
-      function getAnimationVariable() {
-        if (window.innerWidth > 1400) {
-          maxScroll = 500;
-          startX = 0;
-          endX = 0;
-          startY = -860;
-          endY = -760;
-          startScale = 0.7;
-          endScale = 0.4;
-          startRotate = 40;
-          endRotate = 0;
-        } else if (window.innerWidth > 1200) {
-          maxScroll = 500;
-          startX = 0;
-          endX = 0;
-          startY = -860;
-          endY = -760;
-          startScale = 0.7;
-          endScale = 0.4;
-          startRotate = 40;
-          endRotate = 0;
-        } else if (window.innerWidth > 810) {
-          maxScroll = 400;
-          startX = 0;
-          endX = 0;
-          startY = -870;
-          endY = -800;
-          startScale = 0.7;
-          endScale = 0.4;
-          startRotate = 40;
-          endRotate = 0;
-        } else {
-          maxScroll = 300;
-          startX = 0;
-          endX = 0;
-          startY = -870;
-          endY = -770;
-          startScale = 0.3;
-          endScale = 0.3;
-          startRotate = 40;
-          endRotate = 0;
-        }
-      }
-
-      getAnimationVariable();
-      document.addEventListener("DOMContentLoaded", function () {
-        const element = document.getElementById("phone");
-        console.log(endScale);
-        element.style.transform = `perspective(${
-          maxScroll === 300 ? 10000 : 3000
-        }px) translateX(${startX}px) translateY(${startY}px) scale(${startScale}) rotate(0deg) rotateX(${startRotate}deg) rotateY(0deg) skewX(0deg) skewY(0deg) translateZ(0px)`;
-      });
-      window.addEventListener("resize", function (e) {
-        getAnimationVariable();
-      });
-      document.addEventListener(
-        "scroll",
-        function () {
-          const element = document.getElementById("phone");
-
-          if (window.scrollY == 0) {
-            element.style.transform = `perspective(${
-              maxScroll === 300 ? 10000 : 3000
-            }px) translateX(${startX}px) translateY(${startY}px) scale(${startScale}) rotate(0deg) rotateX(${startRotate}deg) rotateY(0deg) skewX(0deg) skewY(0deg) translateZ(0px)`;
-          }
-          if (window.scrollY > 0 && window.scrollY <= maxScroll) {
-            console.log(window.scrollY);
-            element.style.transform = `perspective(${
-              maxScroll === 300 ? 10000 : 3000
-            }px) translateX(${
-              startX + ((endX - startX) / maxScroll) * window.scrollY
-            }px) translateY(${
-              startY + ((endY - startY) / maxScroll) * window.scrollY
-            }px) scale(${
-              startScale +
-              ((endScale - startScale) / maxScroll) * window.scrollY
-            }) rotate(0deg) rotateX(${
-              startRotate + ((endRotate - startRotate) / 500) * window.scrollY
-            }deg) rotateY(0deg) skewX(0deg) skewY(0deg) translateZ(0px)`;
-          }
-          if (window.scrollY > maxScroll) {
-            element.style.transform = `perspective(${
-              maxScroll === 300 ? 10000 : 3000
-            }px) translateX(${endX}px) translateY(${endY}px) scale(${endScale}) rotate(0deg) rotateX(${endRotate}deg) rotateY(0deg) skewX(0deg) skewY(0deg) translateZ(0px)`;
-          }
-        },
-        false
-      );
-    </script>
-  </head>
-  <body style="overflow-x: hidden">
-    <div
-      style="
-        background: linear-gradient(
-          rgba(226, 231, 255, 1),
-          rgba(226, 231, 255, 0)
-        );
-      "
-      class="layout flex flex-col animation-layout"
-    >
-      <div class="flex flex-row header-layout">
-        <img src="assets/images/logo.svg" />
-        <div class="flex flex-row gap-4 button-layout">
-          <button
-          class="primary-btn flex flex-row justify-center align-center gap-md"
-          style="width: 170px; height: 46px"
-        >
-          <img src="assets/images/apple.svg" />
-          Apple Store
-        </button>
-        <button
-          class="primary-btn flex flex-row justify-center align-center gap-md"
-          style="width: 170px; height: 46px"
-        >
-          <img src="assets/images/google.svg" />
-          Google Play
-        </button>
-        </div>
-      </div>
-      <h1 class="main-header">
-        Split one purchase across multiple cards. That’s Paybunny.
-      </h1>
-      <div class="flex flex-row justify-center gap-4">
-        <button
-          class="primary-btn flex flex-row justify-center align-center gap-md"
-          style="width: 170px; height: 46px"
-        >
-          <img src="assets/images/apple.svg" />
-          Apple Store
-        </button>
-        <button
-          class="primary-btn flex flex-row justify-center align-center gap-md"
-          style="width: 170px; height: 46px"
-        >
-          <img src="assets/images/google.svg" />
-          Google Play
-        </button>
-      </div>
-      <div style="margin: 0px auto; margin-top: 10px;">
-        <video width="400" controls>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-          <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
-          Your browser does not support HTML video.
-        </video>
-      </div>
-      
-      <div class="framer-h73xm4">
-        <div style="display: contents">
-          <div
-            class="framer-3gevkx"
-            data-framer-name="phone screen"
-            id="phone"
-            name="phone screen"
-            style="
-              opacity: 1;
-              flex: none;
-              height: 835px;
-              left: 0;
-              overflow: visible;
-              position: absolute;
-              right: 0;
-              top: 531px;
-              z-index: 2;
-            "
-          >
-            <div
-              class="framer-1o6yxmp"
-              data-framer-name="image"
-              name="image"
-              style="
-                transform: translateX(-50%);
-                aspect-ratio: 0.5076347771891555 / 1;
-                flex: none;
-                height: var(--framer-aspect-ratio-supported, 2459px);
-                left: 50%;
-                position: absolute;
-                top: 0;
-                width: 1248px;
-                z-index: 1;
-              "
-            >
-              <div
-                data-framer-background-image-wrapper="true"
-                style="position: absolute; border-radius: inherit; inset: 0px"
-              >
-                <img
-                  decoding="async"
-                  sizes="1248px"
-                  src="assets/images/iPhone.png"
-                  alt=""
-                  class="image"
-                  style="
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: inherit;
-                    object-position: center center;
-                    object-fit: contain;
-                    image-rendering: auto;
-                  "
-                />
-              </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="Main">
+         <div class="HeroDiv">
+            <div class="HeroDivLeft scroll-animate">
+               <div class="logo">
+                <img src="logo.svg" alt="PayBunny Logo">
+               </div>
+               <div>
+                <h1>
+                    The simplest way to split one purchase across multiple cards. That’s Paybunny.
+                </h1>
+               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="background: white" class="layout">
-      <h1 class="sub-header">
-        The simplest way to split one purchase across multiple cards. That’s
-        Paybunny.
-      </h1>
-      <div class="step-layout">
-        <div class="flex flex-col gap-4 step-container">
-          <div
-            style="
-              background-color: #bed5ff;
-              height: 417px;
-              border-radius: 40px;
-              position: relative;
-              overflow: hidden;
-            "
-          >
-            <img src="assets/images/iPhone.png" class="step create-account" />
-          </div>
-          <p style="color: #15141f; font-weight: 800; font-size: 24px">
-            1. Create account
-          </p>
-          <p style="color: #15141f; font-weight: 500; font-size: 16px">
-            Create a Paybunny account and verify your identity within the mobile
-            app
-          </p>
-        </div>
-        <div class="flex flex-col gap-4 step-container">
-          <div
-            style="
-              background-color: #bed5ff;
-              height: 417px;
-              border-radius: 40px;
-              position: relative;
-              overflow: hidden;
-            "
-          >
-            <img src="assets/images/iPhone.png" class="step link-financial" />
-          </div>
-          <p style="color: #15141f; font-weight: 800; font-size: 24px">
-            2. Link financial accounts
-          </p>
-          <p style="color: #15141f; font-weight: 500; font-size: 16px">
-            Link your bank account, debit or credit cards that you would like to
-            use to split payments
-          </p>
-        </div>
-        <div class="flex flex-col gap-4 step-container">
-          <div
-            style="
-              background-color: #bed5ff;
-              height: 417px;
-              border-radius: 40px;
-              position: relative;
-              overflow: hidden;
-            "
-          >
-            <img src="assets/images/iPhone.png" class="step create-card" />
-          </div>
-          <p style="color: #15141f; font-weight: 800; font-size: 24px">
-            3. Create your virtual card
-          </p>
-          <p style="color: #15141f; font-weight: 500; font-size: 16px">
-            Create your one time virtual card for purchase at any merchant
-            checkout
-          </p>
-        </div>
-      </div>
-    </div>
-    <div style="background: white; margin-top: 53px" class="p-10">
-      <div
-        style="
-          border-radius: 50px;
-          background: linear-gradient(#e2e7ff 0%, #e2e7ff00 150%);
-
-          position: relative;
-        "
-        class="flex card-layout"
-      >
-        <div class="flex flex-col card-sub-layout">
-          <p
-            style="
-              font-weight: 800;
-
-              color: #15141f;
-            "
-            class="card-header"
-          >
-            Scan to download the app
-          </p>
-          <img
-            src="assets/images/qr.png"
-            style="width: 140px; height: 140px"
-            class="qr"
-          />
-          <div class="flex button-layout gap-4" style="padding-top: 20px">
-            <button
-              class="primary-btn flex flex-row justify-center align-center gap-md"
-              style="width: 170px; height: 46px"
-            >
-              <img src="assets/images/apple.svg" />
-              Apple Store
+            <div class="HeroDivRight scroll-animate">
+                <img src="Header.png" alt="">
+            </div>
+         </div>
+         <div class="JoinButtonDiv scroll-animate">
+            <button>
+                Join Our Waitlist
             </button>
-            <button
-              class="primary-btn flex flex-row justify-center align-center gap-md"
-              style="width: 170px; height: 46px"
-            >
-              <img src="assets/images/google.svg" />
-              Google Play
-            </button>
-          </div>
+         </div>
+         <div class="header scroll-animate"> 
+            <p>
+                With Paybunny combine your debit and credit cards into one virtual card to checkout with any merchant.
+            </p>
+         </div>
+         <div class="cards">
+            <div class="card1 scroll-animate">
+                <img src="card4.png" alt="">
+                <p class="header1">
+                    1. Create account
+                </p>
+                <p class="header2">Create a Paybunny account and verify your identity within the mobile app.</p>
+            </div>
+            <div class="card2 scroll-animate">
+                <img src="card5.png" alt="">
+                <p class="header1">
+                    2. Link financial accounts
+                </p>
+                <p class="header2">Link your bank account, debit or credit cards that you would like to use to split payments </p>
+            </div>
+            <div class="card3 scroll-animate">
+                <img src="card3.png" alt="">
+                <p class="header1">
+                    3. Create your Virtual card
+                </p>
+                <p class="header2">Create your one time virtual card for purchase at any merchant checkout</p>
+            </div>
+         </div>
+         <div class="waitlist scroll-animate">
+            <div class="waitlistLeft">
+                <h1>
+                    Join our Waitlist
+                </h1>
+                <p>
+                    Create your one time virtual card <br> for purchase at any merchant checkout
+                </p>
+                <button>
+                    Join Our Waitlist
+                </button>
+            </div>
+            <div>
+                <img src="waitlist.png" alt="">
+            </div>
+         </div>
+         <div class="footer scroll-animate">
+            <div class="frame1">
+             <img src="Frame1.png" alt="">
+            </div>
+            <div class="middleFrame">
+                <img src="logo-dark.svg" alt="">
+                <h2>Terms & Conditions</h2>
+                <h2>Privacy Policy</h2>
+                <h2>Card Agreement</h2>
+            </div>
+            <div class="frame2">
+             <img src="Frame2.png" alt="">
+            </div>
+            <p>PAYBUNNY IS A COMPANY SPECIALIZING IN FINANCIAL TECHNOLOGY, NOT A TRADITIONAL BANK. ITS BANKING SERVICES ARE OFFERED THROUGH PIERMONT BANK, WHICH IS AN FDIC MEMBER.</p>
         </div>
-        <img
-          src="assets/images/card.png"
-          style="position: absolute; right: 0px; bottom: 0px"
-          class="card-image"
-        />
-      </div>
     </div>
-    <div
-      style="margin-top: 76px; background: #15141f; position: relative"
-      class="flex flex-row footer-layout"
-    >
-      <img src="assets/images/Frame.png" class="frame" />
-      <div
-        class="flex flex-col justify-end align-center gap-4"
-        style="padding-bottom: 35px"
-      >
-        <img src="assets/images/logo-white.png" style="margin-bottom: 30px" />
-        <a
-          href="#"
-          style="
-            font-weight: 500;
-            color: white;
-            font-size: 12px;
-            text-decoration: none;
-          "
-          >Terms & Conditions</a
-        >
-        <a
-          href="#"
-          style="
-            font-weight: 500;
-            color: white;
-            font-size: 12px;
-            text-decoration: none;
-          "
-          >Privacy Policy</a
-        >
-        <a
-          href="#"
-          style="
-            font-weight: 500;
-            color: white;
-            font-size: 12px;
-            text-decoration: none;
-          "
-          >Card Agreement</a
-        >
-      </div>
-      <img src="assets/images/Frame1.png" class="frame" />
-      <p
-        style="
-          font-size: 6px;
-          font-weight: 500;
-          color: white;
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          bottom: 43px;
-        "
-      >
-        PAYBUNNY IS A COMPANY SPECIALIZING IN FINANCIAL TECHNOLOGY, NOT A
-        TRADITIONAL BANK. ITS BANKING SERVICES ARE OFFERED THROUGH PIERMONT
-        BANK, WHICH IS AN FDIC MEMBER.
-      </p>
-    </div>
-  </body>
+    <script src="animations.js"></script>
+</body>
 </html>

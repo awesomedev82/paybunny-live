@@ -1,0 +1,364 @@
+@font-face {
+    font-family: 'Manrope';
+    src: url('./Manrope-VariableFont_wght.ttf') format('truetype'),
+         url('./Manrope-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+body {
+    font-family: Manrope;
+}
+
+.Main {
+    max-width: 1350px;
+    margin: 0 auto;
+}
+
+.HeroDiv {
+    display: flex;
+    flex-wrap: wrap;
+    height: 580px;
+}
+
+.HeroDivLeft {
+    width: 50%;
+    margin-top: 90px;
+}
+
+.HeroDivLeft h1 {
+    font-size: 48px;
+    width: 90%;
+    font-weight: 800;
+}
+
+.HeroDivRight {
+    width: 50%;
+}
+
+.HeroDivRight img {
+    max-width: 100%;
+    max-height: 600px;
+    margin-top: 40px;
+    margin-left: 55px;
+}
+
+button {
+    width: 170px;
+    height: 50px;
+    background-color: #4263EB;
+    color: white;
+    font-size: 14px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.JoinButtonDiv {
+    position: absolute;
+    top: 510px;
+}
+
+.header {
+    font-size: 32px;
+    width: 640px;
+    margin: 0 auto;
+    font-weight: 800;
+    margin-top: 90px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card1, .card2, .card3 {
+    width: 32%;
+    margin: 10px 0;
+}
+
+.header1 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.header2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card1, .card2, .card3 {
+    width: 32%;
+    margin: 10px 0;
+}
+
+.waitlist {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    height: 400px;
+    justify-content: space-around;
+    background-color: #E2E7FF;
+    border-radius: 30px;
+    width: 94%;
+    margin-left: 20px;
+    flex-wrap: wrap;
+}
+
+.waitlist img {
+    margin-top: 60px;
+    max-width: 100%;
+    max-height: 340px;
+    height: auto;
+}
+
+.waitlistLeft h1 {
+    font-size: 48px;
+    font-size: 800;
+}
+
+.waitlistLeft p {
+    font-size: 16px;
+    font-size: 600;
+}
+
+.footer {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    height: 400px;
+    justify-content: space-between;
+    background-color: #15141F;
+    border-radius: 30px;
+    width: 94%;
+    margin-left: 20px;
+    color: white;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 6px;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    font-weight: 600;
+}
+
+.frame1 img, .frame2 img {
+    max-width: 100%;
+    max-height: 360px;
+    height: auto;
+}
+
+.middleFrame img {
+    max-height: 50px;
+    max-width: 150px;
+    height: auto;
+    width: auto;
+}
+
+.middleFrame {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+.slide-in {
+    animation: slideIn 1s forwards;
+}
+
+.zoom-in {
+    animation: zoomIn 1s forwards;
+}
+
+.scroll-animate.fade-in.scrolled {
+    animation: fadeIn 1s forwards;
+}
+
+.scroll-animate.slide-in.scrolled {
+    animation: slideIn 1s forwards;
+}
+
+.scroll-animate.zoom-in.scrolled {
+    animation: zoomIn 1s forwards;
+}
+
+@media (max-width: 768px) {
+    .HeroDiv {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .HeroDivLeft, .HeroDivRight {
+        width: 100%;
+        text-align: center;
+    }
+
+    .HeroDivLeft {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .JoinButtonDiv {
+        position: relative;
+        top: 0px;
+    }
+
+    .HeroDivLeft h1 {
+        font-size: 24px;
+        margin-left: 20px;
+        font-weight: 800;
+        margin-top: 0px;
+    }
+
+    .HeroDivRight img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+
+    .HeroDivRight {
+        order: 1;
+    }
+
+    .HeroDivLeft button {
+        order: 2;
+        margin-top: 20px;
+    }
+
+    .waitlist, .footer {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        text-align: center;
+        height: 290px;
+    }
+
+    .waitlist button {
+        width: 60%;
+    }
+
+    .waitlist p {
+        font-size: 14px;
+        width: auto;
+    }
+
+    .waitlist img {
+        display: none;
+    }
+
+    .frame1 img, .frame2 img {
+        display: none;
+    }
+
+    .waitlistLeft h1 {
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .header {
+        width: 278px;
+        font-size: 14px;
+        margin-top: 0px;
+    }
+
+    button {
+        width: 100%;
+        height: 50px;
+        gap: 16px;
+        font-size: 14px;
+        font-weight: 700;
+        margin-top: 20px;
+    }
+
+    .header1 {
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .header2 {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer p {
+        font-size: 10px;
+        text-align: center;
+        margin: 0 auto;
+        width: 70%;
+        font-weight: 600;
+    }
+
+    .footer {
+        margin-top: 20px;
+    }
+
+    .card1, .card2, .card3 {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .card1 img, .card2 img, .card3 img {
+        width: 98%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .scroll-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .scroll-animate.scrolled {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
